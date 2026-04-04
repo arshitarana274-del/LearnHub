@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>LearnHub</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 130px;
+        padding: 9px 0px;
+      }
+      li {
+        text-decoration: none;
+        display: inline;
+        list-style: none;
+        padding: 0px 18px;
+        font-size: 17px;
+        font-family: system-ui;
+        color: #636363;
+      }
+      a {
+        text-decoration: none;
+        color: #636363;
+      }
+      i {
+        color: #09c82c;
+      }
+      .nav {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: white;
+        z-index: 999;
+      }
+      .icon {
+        font-size: 18px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+      }
+      button.navbar-btn {
+        color: white;
+        background-color: #09c82c;
+        font-size: 17px;
+        font-family: system-ui;
+        border-color: #09c82c;
+        padding: 11px 20px;
+        border-radius: 100px;
+        border: hidden;
+        font-weight: 600;
+      }
+      .hero-left {
+        width: 40%;
+      }
+      .hero-right {
+        width: 40%;
+        position: relative;
+        height: 400px;
+      }
+      .img-top {
+        position: absolute;
+        border: 1px solid white;
+        top: -8px;
+        right: -74px;
+        background-color: white;
+        border-radius: 100px;
+        padding: 4px 50px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        line-height: 20px;
+        font-size: 14px;
+        color: #525252;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .img-bottom {
+        position: absolute;
+        bottom: 26px;
+        left: -35px;
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 100px;
+        padding: 4px 39px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        line-height: 20px;
+        font-size: 14px;
+        color: #525252;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      img.main-right-img {
+        width: 110%;
+        border-radius: 20px 20px;
+        border: outset;
+        top: 15px;
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .hero-left h4 {
+        display: inline-block;
+        font-family: system-ui;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 20px;
+        color: #09c82c;
+        background-color: #e6f9e9;
+        border: 1px solid #09c82c;
+        border-radius: 100px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .hero-left h3 {
+        font-size: 48px;
+        font-family: system-ui;
+        line-height: 65px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        font-weight: 700;
+      }
+      .hero-left span {
+        color: #09c82c;
+      }
+      #hero {
+        padding: 145px 0;
+      }
+      .hero-left p {
+        padding: 22px 0;
+        font-family: system-ui;
+        font-size: 18px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        color: #636363;
+      }
+      button.learning-btn {
+        padding: 12px 26px;
+        color: white;
+        background-color: #09c82c;
+        border: hidden;
+        border-radius: 100px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      button.yt-btn {
+        padding: 12px 26px;
+        margin: 0 13px;
+        border-radius: 100px;
+        border: hidden;
+        font-family: system-ui;
+        font-size: 15px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        font-weight: 500;
+        color: #636363;
+      }
+      .hero-left label {
+        display: inline-block;
+        padding: 28px 13px;
+        color: #636363;
+        font-family: system-ui;
+        letter-spacing: 0.5px;
+      }
+      span.labels {
+        font-weight: 500;
+        color: #636363;
+      }
+      .course-head {
+        max-width: 1140px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 41px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .course-head h3 {
+        color: #09c82c;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .course-head h2 {
+        font-size: 30px;
+        font-weight: 700;
+        padding: 7px 0;
+      }
+      .course-head span {
+        color: #09c82c;
+      }
+      .course-head p {
+        color: #636363;
+        padding: 15px 0;
+      }
+      .course {
+        width: 250px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        padding: 2px;
+      }
+
+      .course img {
+        width: 100%;
+        margin: 0;
+      }
+      img.avatar {
+        width: 10%;
+        border-radius: 100%;
+        margin: -5px 7px;
+      }
+      .course h5 {
+        margin: 17px 9px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .container-2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 14px 0;
+      }
+      h4.dev {
+        background-color: #f0b100;
+        text-align: center;
+        border-radius: 100px;
+        color: white;
+        font-weight: 500;
+        padding: 1px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      h4.design {
+        color: white;
+        background-color: #fb2c36;
+        text-align: center;
+        border-radius: 100px;
+        font-weight: 500;
+        padding: 1px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      h4.ds {
+        background-color: #00b8db;
+        text-align: center;
+        border-radius: 100px;
+        color: white;
+        font-weight: 500;
+        padding: 1px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      h4.mark {
+        background-color: #09c82c;
+        text-align: center;
+        border-radius: 100px;
+        color: white;
+        font-weight: 500;
+        padding: 1px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      label.name {
+        font-size: 12px;
+        color: #636363;
+        font-weight: 500;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .above-price {
+        font-size: 12px;
+        padding: 14px 0px;
+        color: #636363;
+        text-align: center;
+        padding-bottom: 4px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .above-price label {
+        padding: 0px 11px;
+      }
+      .course-i {
+        color: #636363;
+        padding: 8px 0px;
+      }
+      .course-star {
+        color: #f0b100;
+      }
+      .learning-btn i {
+        color: white;
+      }
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+      label.price {
+        font-weight: 600;
+        font-family: system-ui;
+        padding: 0px 0px;
+        margin: 0 0px 0 9px;
+      }
+      .price-row button {
+        color: #1fca45;
+        font-family: system-ui;
+        font-weight: 500;
+        border: none;
+        background-color: white;
+      }
+      .bg-color {
+        max-width: 1300px;
+        margin: 0px auto;
+        background-color: #f2fcf4;
+      }
+      .play {
+        position: absolute;
+        top: 162px;
+        font-size: 60px;
+        left: 204px;
+      }
+    </style>
+  </head>
+  <body>
+    <!------------------------------------------------------------------>
+    <div class="nav">
+      <div class="container">
+        <div class="icon">
+          <h3><i class="fas fa-book-open"></i> LearnHub</h3>
+        </div>
+        <div class="list">
+          <ul class="links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#course">Courses</a></li>
+            <li>Mentor</li>
+            <li>Group</li>
+            <li>Testimonials</li>
+            <li>Pricing</li>
+          </ul>
+        </div>
+        <div>
+          <button class="navbar-btn">Get Started</button>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------------------------------------------------------->
+    <div class="bg-color">
+      <div id="hero">
+        <div class="container">
+          <div class="hero-left">
+            <h4>• New Courses Available</h4>
+            <h3>Master New Skills <span>Online Anytime, </span>Anywhere</h3>
+            <p>
+              Join over 50,000+ students learning from world-class mentors.
+              Transform your career with industry-leading courses.
+            </p>
+            <button class="learning-btn">
+              Start Learning <i class="fa fa-arrow-right"></i>
+            </button>
+            <button class="yt-btn">YouTube Channel</button><br />
+
+            <label
+              ><i class="fa fa-users"></i
+              ><span class="labels"> 50K+</span> Students</label
+            >
+            <label
+              ><i class="fas fa-book-open"></i
+              ><span class="labels"> 200+</span> Courses</label
+            >
+            <label
+              ><i class="fa fa-star"></i
+              ><span class="labels"> 4.9</span> Rating</label
+            >
+          </div>
+          <div class="hero-right">
+            <img class="main-right-img" src="image/hero-img.jpg" />
+            <div class="img-top">
+              <h4>Join 50K+</h4>
+              <p>Students</p>
+            </div>
+            <div class="img-bottom">
+              <h4>200+ Courses</h4>
+              <p>Available Now</p>
+            </div>
+            <div class="play">
+              <a href="https://youtu.be/HcOc7P5BMi4?si=UEPlHU8_GID6rqqG"
+                ><i class="fa fa-play-circle" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------------------------------------------------->
+    <section id="course">
+      <div class="course-head">
+        <h3>COURSE</h3>
+        <h2>Explore Our Popular <span>Courses</span></h2>
+        <p>
+          Choose from hundreds of courses designed by industry experts to
+          help<br />
+          you achieve your goals.
+        </p>
+      </div>
+      <div class="container-2">
+        <div class="course">
+          <h4 class="dev">Development</h4>
+          <img src="image/course-img-1.jpg" />
+          <h5>Web Development Bootcamp</h5>
+          <img class="avatar" src="image/avatar-1.jpg" />
+          <label class="name">Trisha Leo</label><br />
+          <div class="above-price">
+            <label><i class="fa fa-hourglass course-i"></i> 12 weeks</label>
+            <label><i class="fa fa-users course-i"></i> 2.4K</label>
+            <label><i class="fa fa-star course-star"></i> 4.9</label>
+          </div>
+          <hr />
+          <br />
+          <div class="price-row">
+            <label class="price">$49</label>
+            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="course">
+          <h4 class="design">Design</h4>
+          <img src="image/course-img-2.jpg" />
+          <h5>UI/UX Design Masterclass</h5>
+          <img class="avatar" src="image/avatar-2.jpg" />
+          <label class="name">Sarah Johnson</label><br />
+          <div class="above-price">
+            <label><i class="fa fa-hourglass course-i"></i> 8 weeks</label>
+            <label><i class="fa fa-users course-i"></i> 1.8K</label>
+            <label><i class="fa fa-star course-star"></i> 4.8</label>
+          </div>
+          <hr />
+          <br />
+          <div class="price-row">
+            <label class="price">$79</label>
+            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="course">
+          <h4 class="ds">Data Science</h4>
+          <img src="image/course-img-3.jpg" />
+          <h5>Data Science & Analytics</h5>
+          <img class="avatar" src="image/avatar-3.jpg" />
+          <label class="name">Mike Chen</label><br />
+          <div class="above-price">
+            <label><i class="fa fa-hourglass course-i"></i> 16 weeks</label>
+            <label><i class="fa fa-users course-i"></i> 3.2K</label>
+            <label><i class="fa fa-star course-star"></i> 4.9</label>
+          </div>
+          <hr />
+          <br />
+          <div class="price-row">
+            <label class="price">$129</label>
+            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="course">
+          <h4 class="mark">Marketing</h4>
+          <img src="image/course-img-4.jpg" />
+          <h5>Digital Marketing Pro</h5>
+          <img class="avatar" src="image/avatar-4.jpg" />
+          <label class="name">Emma Davis</label><br />
+          <div class="above-price">
+            <label><i class="fa fa-hourglass course-i"></i> 6 weeks</label>
+            <label><i class="fa fa-users course-i"></i> 1.5K</label>
+            <label><i class="fa fa-star course-star"></i> 4.7</label>
+          </div>
+          <hr />
+          <br />
+          <div class="price-row">
+            <label class="price">$69</label>
+            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
