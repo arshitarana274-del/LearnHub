@@ -13,6 +13,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
     <title>LearnHub</title>
     <style>
       * {
@@ -216,12 +224,11 @@
       .course {
         width: 250px;
         background: white;
-        border-radius: 10px;
+        border-radius: 24px 24px;
         overflow: hidden;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         padding: 2px;
       }
-
       .course img {
         width: 100%;
         margin: 0;
@@ -243,11 +250,19 @@
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         max-width: 1140px;
         margin: 0 auto;
         padding: 14px 0;
+      }
+      .container-3 {
+        display: block;
+        align-items: center;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 14px 0;
+        text-align: center;
       }
       h4.dev {
         background-color: #f0b100;
@@ -255,10 +270,11 @@
         border-radius: 100px;
         color: white;
         font-weight: 500;
-        padding: 1px 0px;
+        padding: 3px 12px;
         font-family: system-ui;
-        letter-spacing: 1px;
-        word-spacing: 1px;
+        display: inline-block;
+        margin: 12px 4px;
+        font-size: 14px;
       }
       h4.design {
         color: white;
@@ -266,10 +282,11 @@
         text-align: center;
         border-radius: 100px;
         font-weight: 500;
-        padding: 1px 0px;
+        padding: 3px 12px;
         font-family: system-ui;
-        letter-spacing: 1px;
-        word-spacing: 1px;
+        display: inline-block;
+        margin: 12px 4px;
+        font-size: 14px;
       }
       h4.ds {
         background-color: #00b8db;
@@ -277,10 +294,11 @@
         border-radius: 100px;
         color: white;
         font-weight: 500;
-        padding: 1px 0px;
+        padding: 3px 12px;
         font-family: system-ui;
-        letter-spacing: 1px;
-        word-spacing: 1px;
+        display: inline-block;
+        margin: 12px 4px;
+        font-size: 14px;
       }
       h4.mark {
         background-color: #09c82c;
@@ -288,10 +306,11 @@
         border-radius: 100px;
         color: white;
         font-weight: 500;
-        padding: 1px 0px;
+        padding: 3px 12px;
         font-family: system-ui;
-        letter-spacing: 1px;
-        word-spacing: 1px;
+        display: inline-block;
+        margin: 12px 4px;
+        font-size: 14px;
       }
       label.name {
         font-size: 12px;
@@ -331,7 +350,7 @@
         margin-top: 10px;
         margin-bottom: 40px;
       }
-      label.price {
+      .price-row label {
         font-weight: 600;
         font-family: system-ui;
         padding: 0px 0px;
@@ -355,165 +374,1348 @@
         font-size: 60px;
         left: 204px;
       }
+      button.yt-btn i {
+        font-size: 20px;
+        color: red;
+      }
+      .view-btn a {
+        font-size: 15px;
+        font-family: system-ui;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 100px;
+        padding: 11px 21px;
+        font-weight: 500;
+        color: black;
+        margin: 39px 0;
+      }
+      .view-btn {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .view-btn i.fa.fa-arrow-right {
+        color: black;
+      }
+      .mentor-head {
+        max-width: 1140px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 41px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .mentor-head h3 {
+        color: #09c82c;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .mentor-head h2 {
+        font-size: 30px;
+        font-weight: 700;
+        padding: 7px 0;
+      }
+      .mentor-head span {
+        color: #09c82c;
+      }
+      .mentor-head p {
+        color: #636363;
+        padding: 15px 0;
+      }
+      .test-head p {
+        color: #636363;
+        padding: 15px 0;
+      }
+      .test-head {
+        max-width: 1140px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 41px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .test-head h3 {
+        color: black;
+        font-size: 31px;
+        font-weight: 700;
+      }
+      .test-head h2 {
+        font-size: 15px;
+        font-weight: 700;
+        color: #09c82c;
+        padding: 7px 0;
+      }
+      .price-head p {
+        color: #636363;
+        padding: 15px 0;
+      }
+      .price-head {
+        max-width: 1140px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 41px 0px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .price-head h3 {
+        color: black;
+        font-size: 31px;
+        font-weight: 700;
+      }
+      .price-head h2 {
+        font-size: 19px;
+        font-weight: 700;
+        color: #09c82c;
+        padding: 7px 0;
+      }
+      .test {
+        background: white;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        padding: 0 23px;
+        text-align: center;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        width: 26%;
+      }
+      section#course {
+        padding: 124px 0 0 0;
+      }
+      .mentor img {
+        border-radius: 100%;
+        width: 35%;
+        margin: 9px 82px;
+        border: 3px solid orange;
+      }
+      .mentor h2 {
+        padding: 9px 0px;
+        font-size: 17px;
+      }
+      .mentor h4 {
+        padding: 0px 0 12px 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #535353;
+      }
+      .mentor p {
+        padding: 0 0px 12px 0;
+        font-size: 14px;
+        color: #535353;
+      }
+      .flex-mentor-footer {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        color: #535353;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .stu {
+        padding: 18px 7px;
+      }
+      .mentor h5 {
+        font-weight: 700;
+        color: black;
+      }
+      .mentor h6 {
+        font-weight: 500;
+      }
+      .mentor i {
+        color: white;
+        border: 1px solid #535353;
+        border-radius: 100%;
+        padding: 5px 3px;
+        border-color: white;
+        background-color: #535353;
+        margin: 12px 0;
+      }
+      .slick-prev {
+        left: -25px;
+        background-color: #535353;
+        border-radius: 100%;
+      }
+      .slick-next {
+        right: -25px;
+        background-color: #535353;
+        border-radius: 100%;
+      }
+      .slick-slide {
+        padding: 0 10px;
+      }
+      .slick-next:focus,
+      .slick-next:hover,
+      .slick-prev:focus,
+      .slick-prev:hover {
+        right: -25px;
+        background-color: #535353;
+        border-radius: 100%;
+      }
+      section#mentor {
+        padding: 124px 0 0 0;
+      }
+      .group-left {
+        width: 40%;
+        font-family: system-ui;
+        line-height: 25px;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+      }
+      .group-right {
+        width: 40%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border-radius: 20px;
+        padding: 39px 50px;
+        background-color: #fff;
+        position: relative;
+      }
+      section#group {
+        background-color: #f1fbf3;
+        padding: 124px 0 0 0;
+      }
+      .group-header h2 {
+        color: #09c82c;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 15px 0px;
+      }
+      .group-header h3 {
+        font-size: 33px;
+        line-height: 50px;
+        padding: 0 0 15px 0;
+      }
+      .group-header span {
+        color: #09c82c;
+      }
+      .group-header p {
+        padding: 0px 0 40px 0;
+        color: #535353;
+      }
+      .group-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0 0 18px 0;
+      }
+      .comm-flex {
+        width: 48%;
+        padding: 8px 0px;
+      }
+      .group-right img {
+        width: 34%;
+        border-radius: 100%;
+      }
+      #group .container-2 {
+        margin: 0 auto;
+        max-width: 1140px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+      .group-left button {
+        color: white;
+        background-color: #09c82c;
+        padding: 10px 28px;
+        border-radius: 100px;
+        font-size: 15px;
+        border: none;
+        font-weight: 700;
+      }
+      .comm-flex i {
+        border: 1px solid white;
+        background-color: #daf6df;
+        border-radius: 100px;
+        padding: 11px;
+      }
+      .comm-flex h4 {
+        font-size: 15px;
+      }
+      .comm-flex p {
+        font-size: 13px;
+        color: #535353;
+        word-spacing: 0;
+        letter-spacing: 0;
+      }
+      img.group-right-img-2,
+      .group-right-img-5,
+      .group-right-img-8 {
+        margin: 0 -19px;
+      }
+      img.group-right-img-2,
+      .group-right-img-5,
+      .group-right-img-8 {
+        border: 3px solid rgb(235, 209, 161);
+      }
+      img.group-right-img-1,
+      .group-right-img-4,
+      .group-right-img-7 {
+        border: 3px solid #c2d9c6;
+      }
+      img.group-right-img-3,
+      .group-right-img-6,
+      .group-right-img-9 {
+        border: 3px solid rgb(240, 199, 240);
+      }
+      .img-footer-top {
+        position: absolute;
+        top: -26px;
+        right: -39px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 50px;
+        padding: 1px 43px;
+        font-family: system-ui;
+        font-size: 13px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .img-footer-bottom {
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 50px;
+        padding: 1px 43px;
+        font-family: system-ui;
+        font-size: 13px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        bottom: -26px;
+        left: -39px;
+      }
+      .img-footer-top i,
+      .img-footer-bottom i {
+        border: 1px solid white;
+        background-color: #daf6df;
+        border-radius: 100px;
+        padding: 11px;
+      }
+      .test i.fa-solid.fa-star {
+        color: gold;
+        padding: 28px 0;
+      }
+      .test i.fa-solid.fa-quote-right {
+        text-align: left;
+        display: block;
+        padding: 0px 6px;
+      }
+      .test p {
+        padding: 23px 0;
+        color: #535353;
+        font-size: 15px;
+      }
+      .test img {
+        width: 15%;
+        border-radius: 100%;
+        text-align: left;
+        display: block;
+        padding: 10px 2px;
+      }
+      .test h2 {
+        font-size: 14px;
+        margin: -52px 0 0 0;
+      }
+      p.bottom-p {
+        margin: -19px 0 0 0;
+        font-size: 14px;
+      }
+      section#testimonials {
+        padding: 94px 0;
+      }
+      .price-head span {
+        color: #09c82c;
+      }
+      .price {
+        background: white;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        padding: 36px 23px;
+        text-align: center;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        width: 24%;
+      }
+      .price h3 {
+        font-size: 18px;
+        padding-bottom: 10px;
+      }
+      .price h4 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #535353;
+        padding-bottom: 18px;
+      }
+      .price h2 {
+        font-size: 32px;
+        padding-bottom: 41px;
+      }
+      .price span {
+        font-size: 15px;
+        font-weight: 400;
+        color: #535353;
+      }
+      .price i {
+        border: 1px solid white;
+        background-color: #daf6df;
+        border-radius: 100%;
+        padding: 1px;
+        align-items: flex-start;
+        display: block;
+        margin: 0 11px;
+      }
+      .price h6 {
+        font-size: 12px;
+        font-weight: 400;
+        text-align: left;
+        margin: -22px 0px 0 66px;
+        padding: 10px 0;
+        color: #636363;
+      }
+      .price button {
+        margin-top: 29px;
+        padding: 13px 79px;
+        border-radius: 30px;
+        border: none;
+        font-size: 14px;
+        color: #535353;
+        font-weight: 600;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .mentor {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border-radius: 30px;
+        align-items: stretch;
+        font-family: system-ui;
+        margin: 34px 0;
+      }
+      .price2 {
+        background: white;
+        border-radius: 40px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        padding: 36px 23px;
+        text-align: center;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        width: 24%;
+        border: 1px solid #09c82c;
+        position: relative;
+      }
+      .price2 h3 {
+        font-size: 18px;
+        padding-bottom: 10px;
+      }
+      .price2 h4 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #535353;
+        padding-bottom: 18px;
+      }
+      .price2 h2 {
+        font-size: 32px;
+        padding-bottom: 41px;
+      }
+      .price2 span {
+        font-size: 15px;
+        font-weight: 400;
+        color: #535353;
+      }
+      .price2 i {
+        border: 1px solid white;
+        background-color: #daf6df;
+        border-radius: 100%;
+        padding: 1px;
+        align-items: flex-start;
+        display: block;
+        margin: 0 11px;
+      }
+      .price2 h6 {
+        font-size: 12px;
+        font-weight: 400;
+        text-align: left;
+        margin: -22px 0px 0 66px;
+        padding: 10px 0;
+        color: #636363;
+      }
+      .price2 button {
+        margin-top: 29px;
+        padding: 13px 79px;
+        border-radius: 30px;
+        border: none;
+        font-size: 14px;
+        color: white;
+        font-weight: 600;
+        background-color: #09c82c;
+        font-family: system-ui;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+      }
+      .price2-head {
+        position: absolute;
+        top: -14px;
+        left: 90px;
+      }
+      .price2-head h2 {
+        background-color: #09c82c;
+        color: white;
+        padding: 6px 18px;
+        border-radius: 20px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      section#pricing {
+        padding: 42px 0;
+      }
+      .learnhub {
+        width: 19%;
+      }
+      #footer {
+        background-color: #f5f5f5;
+        font-family: system-ui;
+        padding-top: 93px;
+        padding-bottom: 29px;
+        letter-spacing: 0.5px;
+        word-spacing: 1px;
+      }
+      .footer-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+      }
+      .footer-col h2 {
+        font-size: 18px;
+        margin-bottom: 25px;
+        font-weight: 700;
+      }
+      .footer-col p {
+        font-size: 14px;
+        color: #636363;
+        margin: 8px 0;
+      }
+      .footer-col i {
+        color: #09c82c;
+        margin-right: 8px;
+        margin-top: 11px;
+      }
+      .footer-bottom {
+        border-top: 1px solid #ddd;
+        margin-top: 53px;
+        padding-top: 35px;
+        font-size: 14px;
+        color: #636363;
+        padding-bottom: 31px;
+      }
+      .footer-bottom span {
+        color: #09c82c;
+      }
+      .footer-bottom p {
+        text-align: left;
+        margin: -15px 61px;
+      }
+      .icons {
+        align-items: end;
+        direction: rtl;
+        padding: 0px 32px;
+        margin: -18px 64px;
+      }
+      .icons i {
+        color: #636363;
+      }
+      .download {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      .download button {
+        padding: 10px 18px;
+        border-radius: 30px;
+        color: white;
+        background-color: black;
+        border: none;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: system-ui;
+        word-spacing: 1px;
+      }
+      .download button:hover {
+        color: white;
+        background-color: #323131;
+        cursor: pointer;
+      }
+      .learnhub h2:hover {
+        color: #09c82c;
+        cursor: pointer;
+      }
+      .view-btn a:hover {
+        color: white;
+        background-color: black;
+      }
+      .view-btn i.fa.fa-arrow-right:hover {
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <!------------------------------------------------------------------>
-    <div class="nav">
-      <div class="container">
-        <div class="icon">
-          <h3><i class="fas fa-book-open"></i> LearnHub</h3>
-        </div>
-        <div class="list">
-          <ul class="links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#course">Courses</a></li>
-            <li>Mentor</li>
-            <li>Group</li>
-            <li>Testimonials</li>
-            <li>Pricing</li>
-          </ul>
-        </div>
-        <div>
-          <button class="navbar-btn">Get Started</button>
-        </div>
-      </div>
-    </div>
-
-    <!----------------------------------------------------------------------------------->
-    <div class="bg-color">
-      <div id="hero">
+    <div class="outer">
+      <!------------------------------------------------------------------>
+      <div class="nav">
         <div class="container">
-          <div class="hero-left">
-            <h4>• New Courses Available</h4>
-            <h3>Master New Skills <span>Online Anytime, </span>Anywhere</h3>
-            <p>
-              Join over 50,000+ students learning from world-class mentors.
-              Transform your career with industry-leading courses.
-            </p>
-            <button class="learning-btn">
-              Start Learning <i class="fa fa-arrow-right"></i>
-            </button>
-            <button class="yt-btn">YouTube Channel</button><br />
-
-            <label
-              ><i class="fa fa-users"></i
-              ><span class="labels"> 50K+</span> Students</label
-            >
-            <label
-              ><i class="fas fa-book-open"></i
-              ><span class="labels"> 200+</span> Courses</label
-            >
-            <label
-              ><i class="fa fa-star"></i
-              ><span class="labels"> 4.9</span> Rating</label
-            >
+          <div class="icon">
+            <h3><i class="fas fa-book-open"></i> LearnHub</h3>
           </div>
-          <div class="hero-right">
-            <img class="main-right-img" src="image/hero-img.jpg" />
-            <div class="img-top">
-              <h4>Join 50K+</h4>
-              <p>Students</p>
+          <div class="list">
+            <ul class="links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#course">Courses</a></li>
+              <li><a href="#mentor">Mentor</a></li>
+              <li><a href="#group">Group</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <button class="navbar-btn">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <!----------------------------------------------------------------------------------->
+      <div class="bg-color">
+        <div id="hero">
+          <div class="container">
+            <div class="hero-left">
+              <h4>• New Courses Available</h4>
+              <h3>Master New Skills <span>Online Anytime, </span>Anywhere</h3>
+              <p>
+                Join over 50,000+ students learning from world-class mentors.
+                Transform your career with industry-leading courses.
+              </p>
+              <button class="learning-btn">
+                Start Learning <i class="fa fa-arrow-right"></i>
+              </button>
+              <button class="yt-btn">
+                <i class="fa-brands fa-youtube"></i> YouTube Channel</button
+              ><br />
+
+              <label
+                ><i class="fa fa-users"></i
+                ><span class="labels"> 50K+</span> Students</label
+              >
+              <label
+                ><i class="fas fa-book-open"></i
+                ><span class="labels"> 200+</span> Courses</label
+              >
+              <label
+                ><i class="fa fa-star"></i
+                ><span class="labels"> 4.9</span> Rating</label
+              >
             </div>
-            <div class="img-bottom">
-              <h4>200+ Courses</h4>
-              <p>Available Now</p>
-            </div>
-            <div class="play">
-              <a href="https://youtu.be/HcOc7P5BMi4?si=UEPlHU8_GID6rqqG"
-                ><i class="fa fa-play-circle" aria-hidden="true"></i
-              ></a>
+            <div class="hero-right">
+              <img class="main-right-img" src="image/hero-img.jpg" />
+              <div class="img-top">
+                <h4>Join 50K+</h4>
+                <p>Students</p>
+              </div>
+              <div class="img-bottom">
+                <h4>200+ Courses</h4>
+                <p>Available Now</p>
+              </div>
+              <div class="play">
+                <a href="https://youtu.be/HcOc7P5BMi4?si=UEPlHU8_GID6rqqG"
+                  ><i class="fa-solid fa-circle-play"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-------------------------------------------------------------->
+      <section id="course">
+        <div class="course-head">
+          <h3>COURSE</h3>
+          <h2>Explore Our Popular <span>Courses</span></h2>
+          <p>
+            Choose from hundreds of courses designed by industry experts to
+            help<br />
+            you achieve your goals.
+          </p>
+        </div>
+        <div class="container-2">
+          <div class="course">
+            <h4 class="dev">Development</h4>
+            <img src="image/course-img-1.jpg" />
+            <h5>Web Development Bootcamp</h5>
+            <img class="avatar" src="image/avatar-1.jpg" />
+            <label class="name">Trisha Leo</label><br />
+            <div class="above-price">
+              <label><i class="fa fa-hourglass course-i"></i> 12 weeks</label>
+              <label><i class="fa fa-users course-i"></i> 2.4K</label>
+              <label><i class="fa fa-star course-star"></i> 4.9</label>
+            </div>
+            <hr />
+            <br />
+            <div class="price-row">
+              <label>$49</label>
+              <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="course">
+            <h4 class="design">Design</h4>
+            <img src="image/course-img-2.jpg" />
+            <h5>UI/UX Design Masterclass</h5>
+            <img class="avatar" src="image/avatar-2.jpg" />
+            <label class="name">Sarah Johnson</label><br />
+            <div class="above-price">
+              <label><i class="fa fa-hourglass course-i"></i> 8 weeks</label>
+              <label><i class="fa fa-users course-i"></i> 1.8K</label>
+              <label><i class="fa fa-star course-star"></i> 4.8</label>
+            </div>
+            <hr />
+            <br />
+            <div class="price-row">
+              <label>$79</label>
+              <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="course">
+            <h4 class="ds">Data Science</h4>
+            <img src="image/course-img-3.jpg" />
+            <h5>Data Science & Analytics</h5>
+            <img class="avatar" src="image/avatar-3.jpg" />
+            <label class="name">Mike Chen</label><br />
+            <div class="above-price">
+              <label><i class="fa fa-hourglass course-i"></i> 16 weeks</label>
+              <label><i class="fa fa-users course-i"></i> 3.2K</label>
+              <label><i class="fa fa-star course-star"></i> 4.9</label>
+            </div>
+            <hr />
+            <br />
+            <div class="price-row">
+              <label>$129</label>
+              <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="course">
+            <h4 class="mark">Marketing</h4>
+            <img src="image/course-img-4.jpg" />
+            <h5>Digital Marketing Pro</h5>
+            <img class="avatar" src="image/avatar-4.jpg" />
+            <label class="name">Emma Davis</label><br />
+            <div class="above-price">
+              <label><i class="fa fa-hourglass course-i"></i> 6 weeks</label>
+              <label><i class="fa fa-users course-i"></i> 1.5K</label>
+              <label><i class="fa fa-star course-star"></i> 4.7</label>
+            </div>
+            <hr />
+            <br />
+            <div class="price-row">
+              <label>$69</label>
+              <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="view-btn">
+          <a href="#hero">View All Courses <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </section>
+      <!-------------------------------------------------------------------------->
+
+      <section id="mentor">
+        <div class="mentor-head">
+          <h3>MENTORS</h3>
+          <h2>Learn From Industry <span>Experts</span></h2>
+          <p>
+            Our mentors are industry leaders with years of experience in<br />
+            their respective fields.
+          </p>
+        </div>
+        <div class="container-3">
+          <div class="mentor">
+            <img src="image/avatar-4.jpg" />
+            <h2>John Smith</h2>
+            <h4>Web Development Expert</h4>
+            <p>
+              8+ years experience in data analysis and machine learning. Former
+              Data Scientist at Facebook.
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>20K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>10</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-3.jpg" />
+            <h2>Sarah Johnson</h2>
+            <h4>Digital Marketing Guru</h4>
+            <p>
+              10+ years experience in digital marketing & SEO strategies. Former
+              Marketing Manager at Google.
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>15K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>8</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-2.jpg" />
+            <h2>Mike Chen</h2>
+            <h4>Data Sceince Specialist</h4>
+            <p>
+              7+ years experience in data analysis and machine learning. Former
+              Data Scientist at Facebook.
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>18K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>12</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-1.jpg" />
+            <h2>Emma Davis</h2>
+            <h4>Graphic Design Artist</h4>
+            <p>
+              9+ years experience in graphic design and visual arts. Former
+              Creative Director at Adobe.
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>22K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>9</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-3.jpg" />
+            <h2>Trisha Leo</h2>
+            <h4>Full Stack Developer</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              iusto ipsa incidunt?
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>15K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>19</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-2.jpg" />
+            <h2>Kaira</h2>
+            <h4>UI/UX Developer</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              iusto ipsa incidunt?
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>10K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>8</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-4.jpg" />
+            <h2>Stefan Salvatore</h2>
+            <h4>MERN Stack Developer</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              iusto ipsa incidunt?
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>12K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>20</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+          <div class="mentor">
+            <img src="image/avatar-3.jpg" />
+            <h2>Caroline</h2>
+            <h4>Web Designer</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              iusto ipsa incidunt?
+            </p>
+            <div class="flex-mentor-footer">
+              <div class="stu">
+                <h5>10K+</h5>
+                <h6>Students</h6>
+              </div>
+              <div class="courses-sec">
+                <h5>9</h5>
+                <h6>Courses</h6>
+              </div>
+            </div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+          </div>
+        </div>
+      </section>
+      <!------------------------------------------------------------------------------->
+
+      <section id="group">
+        <div class="container-2">
+          <div class="group-left">
+            <div class="group-header">
+              <h2>COMMUNITY</h2>
+              <h3>Join Our Thriving <span>Learning Community</span></h3>
+              <p>
+                Learning is better together. Join our community of 50,000+
+                students and unlock collaborative features that accelerate your
+                growth.
+              </p>
+            </div>
+            <div class="group-footer">
+              <div class="comm-flex">
+                <i class="fa fa-users"></i>
+                <h4>Study Groups</h4>
+                <p>
+                  Connect with like-minded learners and form study groups for
+                  collaborative learning.
+                </p>
+              </div>
+              <div class="comm-flex">
+                <i class="fa-regular fa-comment"></i>
+                <h4>Discussion Forums</h4>
+                <p>
+                  Stud Engage in meaningful discussions and get answers from
+                  peers and mentors.
+                </p>
+              </div>
+              <div class="comm-flex">
+                <i class="fa-regular fa-calendar"></i>
+                <h4>Live Sessions</h4>
+                <p>
+                  Join live Q&A sessions and workshops with industry experts.
+                </p>
+              </div>
+              <div class="comm-flex">
+                <i class="fa-regular fa-bell"></i>
+                <h4>Peer Support</h4>
+                <p>
+                  Get help and support from fellow learners anytime you need it.
+                </p>
+              </div>
+              <div class="comm-flex">
+                <i class="fa-solid fa-globe"></i>
+                <h4>Global Community</h4>
+                <p>Connect with students from 150+ countries worldwide.</p>
+              </div>
+              <div class="comm-flex">
+                <i class="fa-regular fa-handshake"></i>
+                <h4>Project Collaboration</h4>
+                <p>Work on real-world projects with your peers.</p>
+              </div>
+            </div>
+            <button>Join Community</button>
+          </div>
+          <div class="group-right">
+            <img class="group-right-img-1" src="image/avatar-1.jpg" />
+            <img class="group-right-img-2" src="image/avatar-2.jpg" />
+            <img class="group-right-img-3" src="image/avatar-3.jpg" />
+            <img class="group-right-img-4" src="image/avatar-4.jpg" />
+            <img class="group-right-img-5" src="image/avatar-3.jpg" />
+            <img class="group-right-img-6" src="image/avatar-1.jpg" />
+            <img class="group-right-img-7" src="image/avatar-2.jpg" />
+            <img class="group-right-img-8" src="image/avatar-1.jpg" />
+            <img class="group-right-img-9" src="image/avatar-4.jpg" />
+            <div class="img-footer-top">
+              <i class="fa-regular fa-comment"></i>
+              <h4>24/7 Support</h4>
+              <p>Always here</p>
+            </div>
+            <div class="img-footer-bottom">
+              <i class="fa-solid fa-globe"></i>
+              <h4>150+ Countries</h4>
+              <p>Worldwide reach</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------------------------------------------------------------------------->
+      <section id="testimonials">
+        <div class="test-head">
+          <h2>TESTIMONIALS</h2>
+          <h3>What Our Students Say</h3>
+          <p>
+            Join thousands of successful students who have transformed their
+            careers with LearnHub.
+          </p>
+        </div>
+        <div class="container-2">
+          <div class="test">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><br />
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              "LearnHub completely transformed my career. The web development
+              bootcamp gave me the skills I needed to land my dream job at Meta.
+              The mentors are incredible!"
+            </p>
+            <hr />
+            <img src="image/avatar-4.jpg" />
+            <h2>Alex Thompson</h2>
+            <p class="bottom-p">Software Developer at Meta</p>
+          </div>
+          <div class="test">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><br />
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              "The UI/UX design course was exactly what I needed. The practical
+              projects and mentor feedback helped me build a portfolio that got
+              me hired at Spotify."
+            </p>
+            <hr />
+            <img src="image/avatar-2.jpg" />
+            <h2>Jessica Lee</h2>
+            <p class="bottom-p">UX Designer at Spotify</p>
+          </div>
+          <div class="test">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><br />
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              "I switched careers from marketing to data science thanks to
+              LearnHub. The structured curriculum and supportive community made
+              the transition seamless."
+            </p>
+            <hr />
+            <img src="image/avatar-3.jpg" />
+            <h2>David Park</h2>
+            <p class="bottom-p">Data Analyst at Amazon</p>
+          </div>
+          <div class="test">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><br />
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              "As a freelancer, I needed flexible learning. LearnHub's
+              self-paced courses fit perfectly into my schedule. Highly
+              recommend!"
+            </p>
+            <hr />
+            <img src="image/avatar-3.jpg" />
+            <h2>Maria Gracis</h2>
+            <p class="bottom-p">Freelance Designer</p>
+          </div>
+          <div class="test">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><br />
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              "The marketing course helped me understand how to grow my startup.
+              The ROI has been incredible - best investment in my education."
+            </p>
+            <hr />
+            <img src="image/avatar-4.jpg" />
+            <h2>James Wilson</h2>
+            <p class="bottom-p">Startup Founder</p>
+          </div>
+          <div class="test">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><br />
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              "The combination of technical and business courses gave me a
+              unique edge. I've recommended LearnHub to all my colleagues."
+            </p>
+            <hr />
+            <img src="image/avatar-1.jpg" />
+            <h2>Emily Chen</h2>
+            <p class="bottom-p">Product Manager at Google</p>
+          </div>
+        </div>
+      </section>
+
+      <!------------------------------------------------------------------------------->
+
+      <section id="pricing">
+        <div class="price-head">
+          <h2>Pricing</h2>
+          <h3>Simple, Transparent <span>Pricing</span></h3>
+          <p>
+            Choose the plan that fits your learning goals. No hidden fees,
+            cancel anytime.
+          </p>
+        </div>
+        <div class="container-2">
+          <div class="price">
+            <h3>Starter</h3>
+            <h4>Perfect for beginners</h4>
+            <h2>Free</h2>
+            <i class="fa-solid fa-check"></i>
+            <h6>Access to 10 free courses</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Basic community access</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Email support</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Mobile app access</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Course completion certificates</h6>
+            <button>Get Started</button>
+          </div>
+
+          <div class="price2">
+            <div class="price2-head">
+              <h2>Most Popular</h2>
+            </div>
+            <h3>Pro</h3>
+            <h4>Most popular choice</h4>
+            <h2>$29<span>/month</span></h2>
+            <i class="fa-solid fa-check"></i>
+            <h6>Unlimited course access</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Full community features</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Priority support 24/7</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Downloadable resources</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Live Q&A sessions</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Project reviews</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Career coachings</h6>
+            <button>Start Pro Trial</button>
+          </div>
+
+          <div class="price">
+            <h3>Enterprise</h3>
+            <h4>For teams & organizations</h4>
+            <h2>$99<span>/month</span></h2>
+            <i class="fa-solid fa-check"></i>
+            <h6>Everything in Pro</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Custom learning paths</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Team analytics dashboard</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Dedicated success manager</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Custom integrations</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>SSO authentication</h6>
+            <i class="fa-solid fa-check"></i>
+            <h6>Invoice billing</h6>
+            <button>Contact Sales</button>
+          </div>
+        </div>
+        <div class="price-head">
+          <p>
+            All plans include a 14-day money-back guarantee. No questions asked.
+          </p>
+        </div>
+      </section>
+
+      <!------------------------------------------------------------------------------->
+      <section id="footer">
+        <div class="footer-container">
+          <div class="footer-col learnhub">
+            <h2><i class="fa-solid fa-book-open"></i> LearnHub</h2>
+            <p>
+              Empowering millions of learners worldwide with industry-leading
+              courses and expert mentors.
+            </p>
+
+            <p><i class="fa-regular fa-envelope"></i> hello@learnhub.com</p>
+            <p><i class="fa-solid fa-phone"></i> +1 (234) 567-890</p>
+            <p><i class="fa-solid fa-location-dot"></i> San Francisco, CA</p>
+          </div>
+
+          <div class="footer-col">
+            <h2>Product</h2>
+            <p>Features</p>
+            <p>Pricing</p>
+            <p>Courses</p>
+            <p>Community</p>
+          </div>
+
+          <div class="footer-col">
+            <h2>Company</h2>
+            <p>About Us</p>
+            <p>Careers</p>
+            <p>Blog</p>
+            <p>Press</p>
+          </div>
+
+          <div class="footer-col">
+            <h2>Support</h2>
+            <p>Help Center</p>
+            <p>Contact Us</p>
+            <p>Privacy Policy</p>
+            <p>Terms of Service</p>
+          </div>
+
+          <div class="footer-col">
+            <h2>Help Center</h2>
+            <p>Web Development</p>
+            <p>UI/UX Design</p>
+            <p>Data Science</p>
+            <p>Marketing</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2026 LearnHub. All rights reserved. Developed by
+            <span>Codescandy</span> • Distributed by <span>ThemeWagon</span>
+          </p>
+          <div class="icons">
+            <a href=""><i class="fa-brands fa-apple"></i></a>
+            <a hre=""><i class="fa-brands fa-square-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </section>
+      <!------------------------------------------------------------------------------->
+      <div class="download">
+        <button>Download Now</button>
       </div>
     </div>
-
-    <!-------------------------------------------------------------->
-    <section id="course">
-      <div class="course-head">
-        <h3>COURSE</h3>
-        <h2>Explore Our Popular <span>Courses</span></h2>
-        <p>
-          Choose from hundreds of courses designed by industry experts to
-          help<br />
-          you achieve your goals.
-        </p>
-      </div>
-      <div class="container-2">
-        <div class="course">
-          <h4 class="dev">Development</h4>
-          <img src="image/course-img-1.jpg" />
-          <h5>Web Development Bootcamp</h5>
-          <img class="avatar" src="image/avatar-1.jpg" />
-          <label class="name">Trisha Leo</label><br />
-          <div class="above-price">
-            <label><i class="fa fa-hourglass course-i"></i> 12 weeks</label>
-            <label><i class="fa fa-users course-i"></i> 2.4K</label>
-            <label><i class="fa fa-star course-star"></i> 4.9</label>
-          </div>
-          <hr />
-          <br />
-          <div class="price-row">
-            <label class="price">$49</label>
-            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
-          </div>
-        </div>
-        <div class="course">
-          <h4 class="design">Design</h4>
-          <img src="image/course-img-2.jpg" />
-          <h5>UI/UX Design Masterclass</h5>
-          <img class="avatar" src="image/avatar-2.jpg" />
-          <label class="name">Sarah Johnson</label><br />
-          <div class="above-price">
-            <label><i class="fa fa-hourglass course-i"></i> 8 weeks</label>
-            <label><i class="fa fa-users course-i"></i> 1.8K</label>
-            <label><i class="fa fa-star course-star"></i> 4.8</label>
-          </div>
-          <hr />
-          <br />
-          <div class="price-row">
-            <label class="price">$79</label>
-            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
-          </div>
-        </div>
-        <div class="course">
-          <h4 class="ds">Data Science</h4>
-          <img src="image/course-img-3.jpg" />
-          <h5>Data Science & Analytics</h5>
-          <img class="avatar" src="image/avatar-3.jpg" />
-          <label class="name">Mike Chen</label><br />
-          <div class="above-price">
-            <label><i class="fa fa-hourglass course-i"></i> 16 weeks</label>
-            <label><i class="fa fa-users course-i"></i> 3.2K</label>
-            <label><i class="fa fa-star course-star"></i> 4.9</label>
-          </div>
-          <hr />
-          <br />
-          <div class="price-row">
-            <label class="price">$129</label>
-            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
-          </div>
-        </div>
-        <div class="course">
-          <h4 class="mark">Marketing</h4>
-          <img src="image/course-img-4.jpg" />
-          <h5>Digital Marketing Pro</h5>
-          <img class="avatar" src="image/avatar-4.jpg" />
-          <label class="name">Emma Davis</label><br />
-          <div class="above-price">
-            <label><i class="fa fa-hourglass course-i"></i> 6 weeks</label>
-            <label><i class="fa fa-users course-i"></i> 1.5K</label>
-            <label><i class="fa fa-star course-star"></i> 4.7</label>
-          </div>
-          <hr />
-          <br />
-          <div class="price-row">
-            <label class="price">$69</label>
-            <button>Enroll Now <i class="fa fa-arrow-right"></i></button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js"
+      integrity="sha512-BzvgYEoHXuphX+g7B/laemJGYFdrq4fTKEo+B3PurSxstMZtwu28FHkPKXu6dSBCzbUWqz/rMv755nUwhjQypw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(".container-3").slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ],
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grids</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .main {
+        background-color: #db9686;
+        padding: 36px 22px;
+      }
+      .container-fluid {
+        background-color: black;
+        padding: 48px 18px;
+        display: grid;
+        gap: 20px;
+      }
+      .row {
+        background-color: #ce5893;
+        padding: 49px 18px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+      }
+      .row-1 {
+        background-color: #ce5893;
+        padding: 49px 18px;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+      }
+      .col-1 {
+        background-color: black;
+        grid-row: 1/17;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-1">1</div>
+          <div class="col-1">1</div>
+          <div class="col-1">1</div>
+        </div>
+        <div class="row-1">
+          <div class="col-1">1</div>
+          <div class="col-1">1</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
