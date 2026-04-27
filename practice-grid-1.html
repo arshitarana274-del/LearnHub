@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Griddd</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .main {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: auto auto auto;
+        padding: 31px 71px;
+      }
+
+      .div-1 {
+        background-color: #fd9900;
+        color: #fff;
+        grid-column: 1/4;
+        text-align: center;
+        padding: 24px 0;
+        font-family: system-ui;
+      }
+
+      .div-2 {
+        background-color: #fe5e02;
+        grid-row: 2/4;
+        text-align: center;
+        padding: 126px 0;
+        color: #fff;
+        font-family: system-ui;
+      }
+
+      .div-3 {
+        background-color: #cc0000;
+        color: #fff;
+        text-align: center;
+        grid-column: 2/4;
+        padding: 70px 0;
+        font-family: system-ui;
+      }
+
+      .div-4 {
+        background-color: #da02ff;
+        color: #fff;
+        font-family: system-ui;
+        padding: 86px 0px;
+        text-align: center;
+      }
+
+      .div-5 {
+        background-color: #fd9900;
+        color: #fff;
+        font-family: system-ui;
+        text-align: center;
+        grid-column: 1/4;
+        padding: 24px 0;
+      }
+
+      .responisve-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        height: 50vh;
+        gap: 10px;
+      }
+
+      .grid-item {
+        background-color: #da02ff;
+      }
+      .grid-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+        height: 100vh;
+        margin-top: 20px;
+        grid-template-areas:
+          "header header header"
+          "sidebar  content box"
+          "footer footer footer";
+      }
+      .sidebar {
+        grid-area: sidebar;
+        background-color: #cc0000;
+      }
+      .footer {
+        grid-area: footer;
+        background-color: #fe5e02;
+      }
+      .main-content {
+        grid-area: content;
+        background-color: aqua;
+      }
+      .header {
+        grid-area: header;
+        background-color: aquamarine;
+      }
+      .box {
+        grid-area: 2;
+        background-color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="div-1">HEADER</div>
+      <div class="div-2">SIDEBAR</div>
+      <div class="div-3">CONTENT 1</div>
+      <div class="div-4">CONTENT 2</div>
+      <div class="div-4">CONTENT 3</div>
+      <div class="div-5">FOOTER</div>
+    </div>
+
+    <div class="responisve-grid">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+
+    <div class="grid-area">
+      <div class="header"></div>
+      <div class="footer"></div>
+      <div class="sidebar"></div>
+      <div class="main-content"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
